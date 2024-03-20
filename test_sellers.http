@@ -1,0 +1,74 @@
+# Набор тестов для эндпоинтов которые можно запустить
+# в VSCode с помощью плагина  REST Client
+# Найти можно по идентификатору: humao.rest-client
+# Tunder Client не позволяет свободно импортировать-экспортировать записи,
+# поэтому перешел на этот плагин. Он тоже хорош :-)
+
+# Создаем продавца
+POST http://localhost:8000/api/v1/sellers/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Evpatiy",
+    "last_name": "Kolovratiy",
+    "e_mail": "biba@edu.boba.ru",
+    "password": "biba_boba_123"
+}
+
+###
+
+# Создаем продавца
+POST http://localhost:8000/api/v1/sellers/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Bella",
+    "last_name": "Petrovna",
+    "e_mail": "sobachka@sobachka.ru",
+    "password": "sobachka_123"
+}
+
+###
+
+# Создаем продавца
+POST http://localhost:8000/api/v1/sellers/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Aboba",
+    "last_name": "Abobavna",
+    "e_mail": "lalala@lalala.ru",
+    "password": "trulala_123"
+}
+
+###
+
+# Получаем список продавцов
+GET http://localhost:8000/api/v1/sellers/ HTTP/1.1
+
+###
+
+# Получаем одного продавца по ИД
+GET http://localhost:8000/api/v1/sellers/1 HTTP/1.1
+
+###
+
+# Обновляем поля в данных о продавце
+PUT http://localhost:8000/api/v1/sellers/1 HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Yaropolk",
+    "last_name": "Yaroslavskiy",
+    "e_mail": "biba2@edu.boba.ru",
+    "password": "biba_boba_123",
+    "id": 1
+}
+
+###
+
+# Удаляем продавца
+DELETE http://localhost:8000/api/v1/sellers/1 HTTP/1.1
+content-type: application/json
+
+###
