@@ -1,0 +1,92 @@
+# Набор тестов для эндпоинтов которые можно запустить
+# в VSCode с помощью плагина  REST Client
+# Найти можно по идентификатору: humao.rest-client
+# Tunder Client не позволяет свободно импортировать-экспортировать записи,
+# поэтому перешел на этот плагин. Он тоже хорош :-)
+
+# Создаем книгу
+POST http://localhost:8000/api/v1/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Wrong Code",
+    "author": "Robert Martin",
+    "pages": 104,
+    "year": 2007,
+    "seller_id": 1
+}
+
+###
+
+# Создаем книгу
+POST http://localhost:8000/api/v1/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Master and Margaret",
+    "author": "Mikhail Bulgakov",
+    "pages": 600,
+    "year": 1940,
+    "seller_id": 1
+}
+
+### 
+
+# Создаем книгу
+POST http://localhost:8000/api/v1/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The first love",
+    "author": "Ivan Turgenev",
+    "pages": 800,
+    "year": 1860,
+    "seller_id": 2
+}
+
+###
+
+# Создаем книгу
+POST http://localhost:8000/api/v1/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "A Hunter's Sketches",
+    "author": "Ivan Turgenev",
+    "pages": 800,
+    "year": 1870,
+    "seller_id": 3
+}
+
+###
+
+# Получаем список книг
+GET http://localhost:8000/api/v1/books/ HTTP/1.1
+
+###
+
+# Получаем одну книгу по ее ИД
+GET http://localhost:8000/api/v1/books/1 HTTP/1.1
+
+###
+
+# Обновляем поля в данных о книге
+PUT http://localhost:8000/api/v1/books/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Clean Code",
+    "author": "Robert Martin",
+    "count_pages": 10,
+    "year": 2007,
+    "id": 0,
+    "seller_id": 2
+}
+
+###
+
+# Удаляем книгу
+DELETE http://localhost:8000/api/v1/books/3 HTTP/1.1
+content-type: application/json
+
+###
